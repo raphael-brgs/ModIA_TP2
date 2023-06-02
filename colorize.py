@@ -12,7 +12,7 @@ from data_utils import get_colorized_dataset_loader
 from unet import UNet
 import tensorflow as tf  
 import tensorboard as tb
-tf.io.gfile = tb.compat.tensorflow_stub.io.gfile
+tf.io.gfile = tb.compat.tensorflow_stub.io.gfile.LocalFileSystem
 # setting device on GPU if available, else CPU
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
