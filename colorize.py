@@ -11,7 +11,7 @@ from tqdm import tqdm
 from data_utils import get_colorized_dataset_loader
 from unet import UNet
 import tensorflow as tf  
-import tensorboard as tb  
+import tensorboard as tb
 tf.io.gfile = tb.compat.tensorflow_stub.io.gfile
 # setting device on GPU if available, else CPU
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -52,7 +52,7 @@ if __name__=='__main__':
     batch_size = args.batch_size
     epochs = args.epochs
     lr = args.lr
-    unet = UNet()#.cuda()
+    unet = UNet().cuda()
     loader = get_colorized_dataset_loader(path=data_path, 
                                         batch_size=batch_size, 
                                         shuffle=True, 
